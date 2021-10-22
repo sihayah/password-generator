@@ -5,8 +5,8 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
 
-// create an array to organize possible character selections
-let chosenCharacters = [];
+  // create an array to organize possible character selections
+  let chosenCharacters = [];
 
 // Gather and define desired password criteria
   var input = function(){
@@ -47,29 +47,8 @@ let chosenCharacters = [];
         chosenCharacters.push("~!@#$%^&*()_+-?");
       };
 
-    // transform all chosen character into one string without commas or spaces
-    chosenCharacters = chosenCharacters.join("");
-
-
-
-    // create shuffle function to rearrange characters in array
-    // currently not working
-    function shuffle(array) {
-    var m = array.length, t, i;
-      while (m) {
-      i = Math.floor(Math.random() * m--);
-      t=array[m];
-      array[m]=array[i];
-      array[i]=t;
-      }
-      return array;
-    };
-    
-    // enact shuffle function on chosen characters
-    chosenCharacters= shuffle(chosenCharacters);
-    // test
-    console.log(chosenCharacters);
-
+  // transform all chosen character into one string without commas or spaces
+  chosenCharacters = chosenCharacters.join("");
 
 
     // generate new password with math random func
@@ -77,11 +56,11 @@ let chosenCharacters = [];
     var generatePassword = function(length) {   
     for ( var i = 0; i < charLength; i++ ) {
       newPassword += (chosenCharacters).charAt(Math.floor(Math.random() * 
-  charLength));
+  chosenCharacters.length));
    }
       return newPassword;
     }  
-
+  
   // append password to form HTML
   // currently not working
     var password = generatePassword();
@@ -89,11 +68,10 @@ let chosenCharacters = [];
     passwordText.value = password;
     newPassword = generatePassword(charLength);
     console.log(newPassword);
-    passwordText.appendChild(newPassword);
   }
   // ask you for input to start the process
   input();
-
+  
 };
 
 
