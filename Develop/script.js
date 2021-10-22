@@ -47,10 +47,13 @@ let chosenCharacters = [];
         chosenCharacters.push("~!@#$%^&*()_+-?");
       };
 
-
+    // transform all chosen character into one string without commas or spaces
     chosenCharacters = chosenCharacters.join("");
 
+
+
     // create shuffle function to rearrange characters in array
+    // currently not working
     function shuffle(array) {
     var m = array.length, t, i;
       while (m) {
@@ -62,35 +65,39 @@ let chosenCharacters = [];
       return array;
     };
     
+    // enact shuffle function on chosen characters
     chosenCharacters= shuffle(chosenCharacters);
-
+    // test
     console.log(chosenCharacters);
 
 
 
-
-    var password = "";
-    function inventPassword(length) {   
+    // generate new password with math random func
+    var newPassword = "";
+    var generatePassword = function(length) {   
     for ( var i = 0; i < charLength; i++ ) {
-      password += (chosenCharacters).charAt(Math.floor(Math.random() * 
+      newPassword += (chosenCharacters).charAt(Math.floor(Math.random() * 
   charLength));
    }
-      return password;
-    }
-    console.log(inventPassword(charLength));
+      return newPassword;
+    }  
+
+  // append password to form HTML
+  // currently not working
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+    newPassword = generatePassword(charLength);
+    console.log(newPassword);
+    passwordText.appendChild(newPassword);
   }
+  // ask you for input to start the process
   input();
-// turn user input into new password with given criteria
 
 };
 
 
-  // var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-
-
-  passwordText.value = password;
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
