@@ -1,6 +1,4 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-// function to generate a random number between two set limits
 
 // Write password to the #password input
 function writePassword() {
@@ -50,32 +48,29 @@ function writePassword() {
   // transform all chosen character into one string without commas or spaces
   chosenCharacters = chosenCharacters.join("");
 
-
-    // generate new password with math random func
-    var newPassword = "";
-    var generatePassword = function(length) {   
+  // generate new password with math random func
+  var newPassword = "";
+  var generatePassword = function(length) {   
     for ( var i = 0; i < charLength; i++ ) {
       newPassword += (chosenCharacters).charAt(Math.floor(Math.random() * 
-  chosenCharacters.length));
-   }
-      return newPassword;
-    }  
+      chosenCharacters.length));
+      feature/password-writer
+    }
+    return newPassword;
+  }  
   
   // append password to form HTML
-  // currently not working
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
     newPassword = generatePassword(charLength);
     console.log(newPassword);
   }
-  // ask you for input to start the process
+
+  // ask user for input to start the process
   input();
   
 };
-
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
