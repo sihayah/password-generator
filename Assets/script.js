@@ -1,12 +1,12 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+function writePassword() {  
 
   // create an array to organize possible character selections
   let chosenCharacters = [];
 
-// Gather and define desired password criteria
+  // Gather and define desired password criteria
   var input = function(){
     var charLength = "";
     charLength= prompt("What is the desired 'LENGTH' of your new password? Please choose a number between 8 and 128.");
@@ -54,22 +54,22 @@ function writePassword() {
     for ( var i = 0; i < charLength; i++ ) {
       newPassword += (chosenCharacters).charAt(Math.floor(Math.random() * 
       chosenCharacters.length));
-      feature/password-writer
     }
     return newPassword;
   }  
-  
-  // append password to form HTML
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-    newPassword = generatePassword(charLength);
-    console.log(newPassword);
+  console.log(newPassword);
+  // // append password to form HTML
+  // newPassword = generatePassword(charLength);
+  // console.log(newPassword);
+  // var passwordText = document.querySelector("#password");
+  // passwordText.value = newPassword;
+
   }
+  
 
   // ask user for input to start the process
   input();
-  
+  window.alert(newPassword);
 };
 
 // Add event listener to generate button
