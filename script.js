@@ -44,26 +44,26 @@ function writePassword() {
       if (symbols) {
         chosenCharacters.push("~!@#$%^&*()_+-?");
       };
-    
 
   // transform all chosen character into one string without commas or spaces
   chosenCharacters = chosenCharacters.join("");
 
-  // Function to generate the new password
+  // generate new password with math random func
   var newPassword = "";
   var generatePassword = function(length) {   
-    for ( var i = 0; i < length; i++ ) {
+    for ( var i = 0; i < charLength; i++ ) {
       newPassword += (chosenCharacters).charAt(Math.floor(Math.random() * 
       chosenCharacters.length));
     }
     return newPassword;
   }  
-
-  // call to generate newPassword
-  generatePassword(charLength);
-  var passwordText = document.querySelector("#password");
-  passwordText.value = newPassword;
-  console.log(newPassword);
+  
+  // append password to form HTML
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+    newPassword = generatePassword(charLength);
+    console.log(newPassword);
   }
 
   // ask user for input to start the process
