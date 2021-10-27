@@ -1,8 +1,8 @@
-Password Generator
+# Password Generator
 
 
-This application generates a random password based on user-selected criteria of uppercase, lowercase, numeric, and special characters. The app runs in the browser and features dynamically updated HTML and CSS powered by your JavaScript code. It has a clean and polished user interface and is responsive, which ensures that it adapts to multiple screen sizes.
+This application generates a random password based on user's selection of uppercase, lowercase, numeric, and special characters. This application runs in the browser. Selections are made through with pop-up boxes, and the generated password appears in the password-genertor's text area. The HTML is style in CSS, and comes to togethor with Javascript to establish the desired user experience. 
 
-[Landing page](password-generator-landing.png)
+![password generator](images/pass-gen.png "password-generator application")
 
 Deployment link: https://sihayah.github.io/password-generator/
